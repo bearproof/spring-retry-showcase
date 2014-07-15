@@ -1,8 +1,9 @@
-package org.bearproof.showcase.retry.config;
+package com.bearproof.mvc.web.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -16,13 +17,20 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import java.util.Properties;
 
 /**
- * User: Adi Ursu
- * Date: 7/15/2014
- * Time: 6:22 PM
+ * Date:   6/5/13 / 7:57 AM
+ * Author: Johnathan Mark Smith
+ * Email:  john@johnathanmarksmith.com
+ * <p/>
+ * Comments:
+ * <p/>
+ * This is a VERY basic Spring Config setup for a web apps
  */
+
 @Configuration
 @EnableWebMvc
-public class WebMVCConfig extends WebMvcConfigurerAdapter {
+@ComponentScan(basePackages = {"com.bearproof.mvc.web"})
+public class WebMVCConfig extends WebMvcConfigurerAdapter
+{
 
     private static final Logger logger = LoggerFactory.getLogger(WebMVCConfig.class);
 

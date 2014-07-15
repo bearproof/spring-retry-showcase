@@ -1,4 +1,4 @@
-package org.bearproof.showcase.retry.controller;
+package com.bearproof.mvc.web.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,17 +19,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-@RequestMapping("/test")
-class HelloController
-{
+@RequestMapping("/")
+class IndexController {
 
-    private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
+    private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
     @RequestMapping(method = RequestMethod.GET)
-    public String displayRequestPage(ModelMap model)
-    {
-        model.addAttribute("message", "Hello world!");
-        return "hello";
+    public String displayRequestPage(ModelMap model) {
+        model.addAttribute("message", "message from server");
+        logger.debug("made it to controller");
+        return "helloworld";
+
     }
 
 
